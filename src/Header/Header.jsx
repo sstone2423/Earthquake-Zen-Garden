@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import sampleData from '../utils/SampleData.json';
+import './_header.css';
 
 /**
  * Displays realtor.com logo, app title, user name
@@ -15,11 +16,11 @@ const Header = () => {
   } = sampleData;
 
   return (
-    <nav>
+    <nav className="header">
       <Link to="/">
-        <img src={logoImage} alt="Realtor.com logo" />
+        <img src={logoImage} alt="Realtor.com logo" height="50" width="50" />
       </Link>
-      <h1>{title}</h1>
+      <h1 className="header__title">{title}</h1>
       <Link to="/profile">Welcome {firstName}</Link>
     </nav>
   );

@@ -4,6 +4,7 @@ import Home from './Home/Home';
 import Profile from './Profile/Profile';
 import Detail from './Detail/Detail';
 import Header from './Header/Header';
+import './_app.css';
 
 const App = () => (
   <Router>
@@ -12,7 +13,7 @@ const App = () => (
       <Route path="/profile">
         <Profile />
       </Route>
-      <Route path="/detail">
+      <Route path="/detail/:earthquakeId">
         <Detail />
       </Route>
       <Route path="/">
