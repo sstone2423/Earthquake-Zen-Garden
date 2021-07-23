@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Page from '../Page/Page';
-import sampleData from '../utils/SampleData.json';
+import sampleData from '../../utils/SampleData.json';
 import MiniTable from '../MiniTable/MiniTable';
 
 /**

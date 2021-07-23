@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import sampleData from '../utils/SampleData.json';
+import sampleData from '../../utils/SampleData.json';
 import './_header.css';
 
 /**

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Page from '../Page/Page';
-import sampleData from '../utils/SampleData.json';
-import { SortDirection } from '../constants/constants';
-import { sortData, changeSortDirection, formatDate } from '../utils/utils';
+import sampleData from '../../utils/SampleData.json';
+import { SortDirection } from '../../constants/constants';
+import { sortData, changeSortDirection, formatDate } from '../../utils/utils';
 import './_home.css';
 
 /**

@@ -1,6 +1,6 @@
 import React from 'react';
 import Page from '../Page/Page';
-import sampleData from '../utils/SampleData.json';
+import sampleData from '../../utils/SampleData.json';
 import MiniTable from '../MiniTable/MiniTable';
 import './_profile.css';
 
