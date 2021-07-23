@@ -1,0 +1,24 @@
+.home__th {
+  font-weight: normal;
+}
+
+.home__td {
+  color: #444444;
+}
+
+.home__center {
+  text-align: center;
+}
+
+.home__tbody {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.home__link {
+  color: #0011bb;
+}
+
+.home__link:visited {
+  color: #6600cc;
+}

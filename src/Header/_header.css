@@ -10,3 +10,11 @@
   font-size: 2rem;
   color: #777777;
 }
+
+.header__username {
+  color: #0011bb;
+}
+
+.header__username:visited {
+  color: #6600cc;
+}

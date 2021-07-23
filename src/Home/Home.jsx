@@ -3,59 +3,8 @@ import { Link } from 'react-router-dom';
 import Page from '../Page/Page';
 import sampleData from '../utils/SampleData.json';
 import { SortDirection } from '../constants/constants';
-
-const sortData = (data, sortConfig) => {
-  const { colId, direction } = sortConfig;
-  // only sort if a column is selected
-  if (colId && direction !== SortDirection.NONE) {
-    // collator handles alphanumeric strings and case-sensitivity
-    const collator = new Intl.Collator(undefined, {
-      numeric: true,
-      sensitivity: 'base',
-    });
-
-    return data.sort((a, b) => {
-      // first get the values being sorted
-      const valueToSortA = a.properties[colId];
-      const valueToSortB = b.properties[colId];
-
-      // then compare based off ASC or DESC
-      if (direction === SortDirection.ASC) {
-        if (typeof valueToSortA === 'string' && typeof valueToSortB === 'string') {
-          return collator.compare(valueToSortA, valueToSortB);
-        }
-        return valueToSortA - valueToSortB;
-      }
-
-      // DESC
-      if (typeof valueToSortA === 'string' && typeof valueToSortB === 'string') {
-        return collator.compare(valueToSortB, valueToSortA);
-      }
-      return valueToSortB - valueToSortA;
-    });
-  }
-
-  // return the same data as the sort won't change
-  return data;
-};
-
-const changeSortDirection = (currentSortDirection, shouldReset) => {
-  if (shouldReset) {
-    return SortDirection.ASC;
-  }
-
-  switch (currentSortDirection) {
-    case SortDirection.NONE:
-      return SortDirection.ASC;
-
-    case SortDirection.ASC:
-      return SortDirection.DESC;
-
-    case SortDirection.DESC:
-    default:
-      return SortDirection.NONE;
-  }
-};
+import { sortData, changeSortDirection, formatDate } from '../utils/utils';
+import './_home.css';
 
 /**
  * Default view the user sees when app loads
@@ -97,23 +46,30 @@ const Home = () => {
       <table>
         <thead>
           <tr>
-            <th onClick={() => handleColumnHeaderClick('place')}>Title</th>
-            <th onClick={() => handleColumnHeaderClick('mag')}>Magnitude</th>
-            <th onClick={() => handleColumnHeaderClick('time')}>Time</th>
+            <th className="home__th" onClick={() => handleColumnHeaderClick('place')}>
+              Title
+            </th>
+            <th className="home__th" onClick={() => handleColumnHeaderClick('mag')}>
+              Magnitude
+            </th>
+            <th className="home__th" onClick={() => handleColumnHeaderClick('time')}>
+              Time
+            </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="home__tbody">
           {formattedData.map(({ properties: { mag, place, time }, id }) => (
             <tr key={`${mag}-${place}-${time}`}>
               <td>
                 <Link
+                  className="home__link"
                   // send the earthquake id to the details page
                   to={`/detail/${id}`}>
                   {place}
                 </Link>
               </td>
-              <td>{mag}</td>
-              <td>{time}</td>
+              <td className="home__td home__center">{mag}</td>
+              <td className="home__td">{formatDate(time)}</td>
             </tr>
           ))}
         </tbody>

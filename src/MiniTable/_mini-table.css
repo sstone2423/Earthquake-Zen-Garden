@@ -1,0 +1,19 @@
+.mini-table__title {
+  color: #444444;
+  vertical-align: baseline;
+}
+
+.mini-table__value {
+  color: #777777;
+  padding-left: 1rem;
+  max-width: 20rem;
+}
+
+.mini-table__tbody {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.mini-table__tr {
+  margin-bottom: 1rem;
+}

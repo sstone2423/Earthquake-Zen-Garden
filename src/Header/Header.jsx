@@ -21,7 +21,9 @@ const Header = () => {
         <img src={logoImage} alt="Realtor.com logo" height="50" width="50" />
       </Link>
       <h1 className="header__title">{title}</h1>
-      <Link to="/profile">Welcome {firstName}</Link>
+      <Link to="/profile" className="header__username">
+        Welcome {firstName}
+      </Link>
     </nav>
   );
 };
