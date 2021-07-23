@@ -1,11 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './Home/Home';
-import Profile from './Profile/Profile';
-import Detail from './Detail/Detail';
-import Header from './Header/Header';
+import Home from './components/Home/Home';
+import Profile from './components/Profile/Profile';
+import Detail from './components/Detail/Detail';
+import Header from './components/Header/Header';
 import './_app.css';
 
+/**
+ * Primarily sets up routing for the application
+ */
 const App = () => (
   <Router>
     <Header />

@@ -9,12 +9,14 @@ import MiniTable from '../MiniTable/MiniTable';
  * Displays title, magnitude, time, status, tsunami, and type
  */
 const Detail = () => {
+  // this could come from the Home componet OR it could be getting fetched
   const {
     data: { features },
   } = sampleData;
 
   const { earthquakeId } = useParams();
 
+  // If this was being fetched, I could use the id to query the right earthquake details
   const {
     properties: { time, title, tsunami, status, mag, type },
   } = features.find(({ id }) => id === earthquakeId);
